@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário Completo</title>
+</head>
+<body>
+    <h2>Formulário de Exemplo</h2>
+    <form action="#" method="post">
+
+        <!-- Campo de texto simples -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" 
+              value="Marcio"><br><br>
+
+        <!-- Campo de senha -->
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <!-- Campo de e-mail -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" ><br><br>
+
+        <!-- Campo de número -->
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" min="0" max="120"><br><br>
+
+        <!-- Campo de telefone -->
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone"><br><br>
+
+        <!-- Campo de URL -->
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website"><br><br>
+
+        <!-- Campo de data -->
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data"><br><br>
+
+        <!-- Campo de hora -->
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora"><br><br>
+
+        <!-- Campo de mês -->
+        <label for="mes">Mês:</label>
+        <input type="month" id="mes" name="mes"><br><br>
+
+        <!-- Campo de semana -->
+        <label for="semana">Semana:</label>
+        <input type="week" id="semana" name="semana"><br><br>
+
+        <!-- Campo de pesquisa -->
+        <label for="pesquisa">Pesquisar:</label>
+        <input type="search" id="pesquisa" name="pesquisa"><br><br>
+
+        <!-- Campo de cor -->
+        <label for="cor">Cor Favorita:</label>
+        <input type="color" id="cor" name="cor"><br><br>
+
+        <!-- Campo de range (faixa) -->
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" name="volume" min="0" max="100"><br><br>
+    
+        <!-- Campo de checkbox -->
+        <label>Interesses:</label><br>
+        <input type="checkbox" id="musica" name="interesses[]" value="musica">
+        <label for="musica">Música</label><br>
+        <input type="checkbox" id="esportes" name="interesses[]" value="esportes">
+        <label for="esportes">Esportes</label><br>
+        <input type="checkbox" id="leitura" name="interesses[]" value="leitura">
+        <label for="leitura">Leitura</label><br><br>
+
+        <!-- Campo de radio button -->
+        <label>Gênero:</label><br>
+        <input type="radio" id="masculino" name="genero" value="masculino">
+        <label for="masculino">Masculino</label><br>
+        <input type="radio" id="feminino" name="genero" value="feminino">
+        <label for="feminino">Feminino</label><br><br>
+
+        <!-- Campo de seleção dropdown -->
+        <label for="pais">País:</label>
+        <select id="pais" name="pais">
+            <option value="1">Brasil</option>
+            <option value="2">Portugal</option>
+            <option value="3">Angola</option>
+        </select><br><br>
+
+        <!-- Campo de textarea -->
+        <label for="comentarios">Comentários:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea><br><br>
+
+        <!-- Campo de arquivo -->
+        <label for="arquivo">Enviar um arquivo:</label>
+        <input type="file" id="arquivo" name="arquivo"><br><br>
+
+        <!-- Botões de envio e reset -->
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Resetar">
+    </form>
+</body>
+</html>

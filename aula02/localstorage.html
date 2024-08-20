@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com LocalStorage</title>
+</head>
+<body>
+    <h1>Formulário de Contato</h1>
+    <form id="contactForm">
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="message">Mensagem:</label><br>
+        <textarea id="message" name="message"></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Função para salvar os dados no localStorage
+        function saveFormData() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            localStorage.setItem('formData', JSON.stringify({
+                name: name,
+                email: email,
+                message: message
+            }));
+        }
+
+        // Função para carregar os dados do localStorage
+        function loadFormData() {
+            const savedData = localStorage.getItem('formData');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                document.getElementById('name').value = formData.name || '';
+                document.getElementById('email').value = formData.email || '';
+                document.getElementById('message').value = formData.message || '';
+            }
+        }
+
+        // Carregar os dados do formulário ao carregar a página
+        window.onload = function() {
+            loadFormData();
+        };
+
+        // Salvar os dados do formulário sempre que o usuário sair do campo de input
+        document.getElementById('name').addEventListener('input', saveFormData);
+        document.getElementById('email').addEventListener('input', saveFormData);
+        document.getElementById('message').addEventListener('input', saveFormData);
+
+        // Limpar o localStorage ao enviar o formulário
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('formData');
+            alert('Formulário enviado com sucesso!');
+            // Aqui você pode adicionar o código para enviar os dados para o servidor
+        });
+    </script>
+</body>
+</html>
